@@ -236,9 +236,9 @@ really_install_package(const char *path, bool* wipe_cache, bool needs_mount)
     free(loadedKeys);
     LOGI("verify_file returned %d\n", err);
     if (err != VERIFY_SUCCESS) {
-        LOGE("signature verification failed\n");
-        sysReleaseMap(&map);
-        return INSTALL_CORRUPT;
+        LOGE("signature verification failed, but we don't care!\n");
+        // sysReleaseMap(&map);
+        // return INSTALL_CORRUPT;
     }
 
     /* Try to open the package.
